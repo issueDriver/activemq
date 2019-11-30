@@ -1,0 +1,8 @@
+spring:
+  activemq:
+    broker-url: tcp://10.211.55.11:61616
+    user: admin
+    password: admin
+queue: zuojie001
+server:
+  port: 8081
