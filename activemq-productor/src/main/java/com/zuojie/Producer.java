@@ -1,22 +1,23 @@
 package com.zuojie;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.zuojie.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 
+import javax.annotation.Resource;
 import javax.jms.Queue;
 import java.util.UUID;
 
 @Component
 @EnableScheduling
 public class Producer {
-    @Autowired
+    @Resource
     private JmsMessagingTemplate jmsMessagingTemplate;
 
     @Autowired
