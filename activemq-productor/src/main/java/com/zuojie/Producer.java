@@ -1,5 +1,6 @@
 package com.zuojie;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.zuojie.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class Producer {
     public void send(){
         age++;
         UserEntity userEntity = new UserEntity(System.currentTimeMillis(), UUID.randomUUID().toString(), age);
-        String json= new JSONObject().toJSONString(userEntity);
+        String json = JSON.toJSONString(userEntity);
         System.out.println("json:"+json);
         jmsMessagingTemplate.convertAndSend(queue,json);
     }
